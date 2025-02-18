@@ -1,5 +1,5 @@
 import React from "react";
-import ThreeImg from "./threeImg";
+import ThreeImg from "./ThreeImg";
 const Card = (product) => {
   const { name, email, gender, img } = product.product;
   return (
