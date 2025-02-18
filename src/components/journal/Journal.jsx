@@ -1,5 +1,5 @@
 import React from 'react'
-import JournalPage1 from './pages/journalPage1'
+import JournalPage1 from './pages/JournalPage1'
 import BlogList from './pages/BlogList'
 import DiscountSection from '../discountSection/DiscountSection'
 
