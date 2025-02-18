@@ -1,5 +1,5 @@
 import React from 'react'
-import ThreeImg from '../../fiber3d/threeImg'
+import ThreeImg from '../../fiber3d/ThreeImg'
 
 
 const Page1__img = () => {
