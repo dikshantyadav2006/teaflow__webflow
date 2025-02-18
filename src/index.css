@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: font1;
+  src: url(./fonts/one.ttf);
+}
+@font-face {
+  font-family: font2;
+  src: url(./fonts/two.ttf);
+}
+@font-face {
+  font-family: font3;
+  src: url(./fonts/three.ttf);
+}
+@font-face {
+  font-family: font4;
+  src: url(./fonts/four.ttf);
+}
+@font-face {
+  font-family: font5;
+  src: url(./fonts/five.ttf);
+}
+
+@font-face {
+  font-family: font6;
+  src: url(fonts/GolosText-Black.ttf);
+}
+
+
+.webColor{
+  color: #222020;
+  font-family: font1;
+  background: #FFFFFF;
+}
