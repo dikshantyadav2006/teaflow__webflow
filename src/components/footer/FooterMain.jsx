@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../../utils/scrollToTop";
 
 const FooterMain = () => {
   const footerLinks = {
@@ -62,7 +63,7 @@ const FooterMain = () => {
         },
         ourBlog: {
           title: "Our Blog",
-          path: "/ourblog",
+          path: "/journal",
         },
       },
     },
@@ -101,7 +102,7 @@ const FooterMain = () => {
                   whileInView="inView"
                   viewport="viewport"
                 >
-                  <Link to={links.path}>
+                  <Link to={links.path} onClick={scrollToTop}>
                     <motion.h3
                       className="font-extralight sm:text-[1.2vw] font-[font1]  lowercase    "
                       variants={{

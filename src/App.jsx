@@ -3,6 +3,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import Navbar from './components/navbar/Navbar_main'
 import AppRoutes from './utils/AppRoutes'
 import FooterMain from './components/footer/FooterMain';
+import { CartProvider } from './context/CartContext';
 const App = () => {
 
 
@@ -10,12 +11,13 @@ const App = () => {
   
 
   return (
-    <main className='webColor'>
-       
-    <Navbar/>
-    <AppRoutes/>
-    <FooterMain/>
-    </main>
+    <CartProvider>
+      <main className='webColor'>
+        <Navbar/>
+        <AppRoutes/>
+        <FooterMain/>
+      </main>
+    </CartProvider>
   )
 }
 

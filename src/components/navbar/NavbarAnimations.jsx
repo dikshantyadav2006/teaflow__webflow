@@ -12,7 +12,7 @@ const NavbarAnimations = () => {
     gsap.to(navCardRef.current, {
       opacity: 1,
       y: showNav ? "-150%" : "0%",
-      duration: 1,
+      duration: .21,
       ease: "power1.out",
     });
 
