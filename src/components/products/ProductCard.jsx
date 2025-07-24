@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
+import { scrollToTopInstant } from '../../utils/scrollToTop'
 
 const ProductCard = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false)
@@ -10,6 +11,7 @@ const ProductCard = ({ product }) => {
   const { name, price, category, description, img } = product
 
   const handleViewDetails = () => {
+    scrollToTopInstant()
     navigate(`/products/${product.id}`)
   }
 

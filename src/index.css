@@ -10,33 +10,54 @@
 
 @font-face {
   font-family: font1;
-  src: url(./fonts/one.ttf);
+  src: url(/fonts/one.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: font2;
-  src: url(./fonts/two.ttf);
+  src: url(/fonts/two.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: font3;
-  src: url(./fonts/three.ttf);
+  src: url(/fonts/three.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: font4;
-  src: url(./fonts/four.ttf);
+  src: url(/fonts/four.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: font5;
-  src: url(./fonts/five.ttf);
-}
-
-@font-face {
-  font-family: font6;
-  src: url(fonts/GolosText-Black.ttf);
+  src: url(/fonts/five.ttf);
+  font-display: swap;
 }
 
 
 .webColor{
   color: #222020;
-  font-family: font1;
+  font-family: font1, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   background: #FFFFFF;
+}
+
+/* Font fallbacks for better loading */
+.font-font1 {
+  font-family: font1, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-font2 {
+  font-family: font2, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-font3 {
+  font-family: font3, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-font4 {
+  font-family: font4, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-font5 {
+  font-family: font5, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }

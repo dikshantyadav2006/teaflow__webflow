@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { scrollToTopInstant } from "../../utils/scrollToTop";
 
 const NavbarCard = ({ showNav, navCardToggleButton, navCardLinksRefs }) => {
   const btns = [
@@ -57,6 +58,7 @@ const NavbarCard = ({ showNav, navCardToggleButton, navCardLinksRefs }) => {
           <NavLink
             onClick={() => {
               navCardToggleButton();
+              scrollToTopInstant();
               //   animate all animations
             }}
             to={btn.path}
@@ -93,7 +95,7 @@ const NavbarCard = ({ showNav, navCardToggleButton, navCardLinksRefs }) => {
                     whileInView="inView"
                     viewport="viewport"
                   >
-                    <Link to={links.path}>
+                    <Link to={links.path} onClick={scrollToTopInstant}>
                       <motion.h3
                         className="font-extralight sm:text-[1.2vw] font-[font1]  lowercase    "
                         variants={{

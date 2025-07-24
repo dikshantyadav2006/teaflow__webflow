@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../../context/CartContext";
 import ThreeImg from "../../fiber3d/ThreeImg";
+import { scrollToTopInstant } from "../../../utils/scrollToTop";
 
 const TeaCard = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -12,6 +13,7 @@ const TeaCard = ({ product }) => {
 
   const handleViewDetails = (e) => {
     e.stopPropagation();
+    scrollToTopInstant();
     navigate(`/products/${id}`);
   };
 
@@ -30,12 +32,12 @@ const TeaCard = ({ product }) => {
       onClick={handleViewDetails}
     >
       {/* Product Image with 3D Effect */}
-      <div className="h-[20vw] w-[25vw] flex-shrink-0 rounded-lg relative overflow-hidden">
+      <div className="h-[60vw] w-[70vw] sm:h-[35vw] sm:w-[40vw] lg:h-[20vw] lg:w-[25vw] flex-shrink-0 rounded-lg relative overflow-hidden">
         <ThreeImg img={img} />
         
         {/* Category Badge */}
         <div className="absolute top-2 left-2">
-          <span className="bg-black/70 backdrop-blur-sm text-white px-2 py-1 text-xs rounded-full">
+          <span className="bg-black/70 backdrop-blur-sm text-white px-2 py-1 text-xs sm:text-sm rounded-full">
             {category}
           </span>
         </div>
@@ -48,7 +50,7 @@ const TeaCard = ({ product }) => {
           transition={{ duration: 0.3 }}
         >
           <motion.button
-            className="bg-white/20 backdrop-blur-md text-white border border-white/30 px-4 py-2 rounded-full font-semibold hover:bg-white/30 transition-colors text-sm"
+            className="bg-white/20 backdrop-blur-md text-white border border-white/30 px-3 py-2 sm:px-4 sm:py-2 rounded-full font-semibold hover:bg-white/30 transition-colors text-xs sm:text-sm"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
             transition={{ duration: 0.3 }}
@@ -60,19 +62,19 @@ const TeaCard = ({ product }) => {
       </div>
 
       {/* Product Info */}
-      <div className="mt-4 text-center w-full px-2">
-        <div className="flex justify-between items-center mb-2">
-          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors truncate">
+      <div className="mt-3 sm:mt-4 text-center w-full px-2 sm:px-3">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors truncate mb-1 sm:mb-0">
             {name}
           </h3>
-          <span className="text-lg font-bold text-gray-900 ml-2">{price}</span>
+          <span className="text-base sm:text-lg font-bold text-gray-900">{price}</span>
         </div>
-        
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">{description}</p>
-        
+
+        <p className="text-gray-600 text-xs sm:text-sm mb-3 line-clamp-2">{description}</p>
+
         {/* Add to Cart Button */}
         <motion.button
-          className="w-full bg-black/80 backdrop-blur-sm text-white py-2 rounded-lg font-medium hover:bg-black transition-colors text-sm"
+          className="w-full bg-black/80 backdrop-blur-sm text-white py-2 rounded-lg font-medium hover:bg-black transition-colors text-xs sm:text-sm"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleAddToCart}

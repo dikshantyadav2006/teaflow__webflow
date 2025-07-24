@@ -4,7 +4,6 @@ import Navbar from './components/navbar/Navbar_main'
 import AppRoutes from './utils/AppRoutes'
 import FooterMain from './components/footer/FooterMain';
 import { CartProvider } from './context/CartContext';
-import CartDebug from './components/debug/CartDebug';
 const App = () => {
 
 
@@ -19,7 +18,6 @@ const App = () => {
         <Navbar/>
         <AppRoutes/>
         <FooterMain/>
-        {/* <CartDebug/> */}
       </main>
     </CartProvider>
   )

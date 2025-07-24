@@ -60,39 +60,44 @@ const Page2Main = () => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    gsap.to(scrollRef.current, {
-      x: `-${teaProducts.length * 36 - 100 + 20}vw `,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
+    // Only apply horizontal scroll animation on desktop
+    if (window.innerWidth >= 1024) {
+      gsap.to(scrollRef.current, {
+        x: `-${teaProducts.length * 36 - 100 + 20}vw `,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      });
+    }
   }, []);
 
   return (
-    <div className="w-full webColor lg:block hidden">
+    <div className="w-full webColor block">
       <div
         ref={containerRef}
-        className=" relative"
-        style={{ height: `${teaProducts.length * 50}vh` }}
+        className="relative"
+        style={{ height: window.innerWidth >= 1024 ? `${teaProducts.length * 50}vh` : 'auto' }}
       >
-        <div className="flex flex-col h-[100vh] overflow-hidden   sticky left-0 top-0 pt-[10vh]">
-          <div className=" pl-[12vw] mb-[5vw]  ">
-            <h1 className=" uppercase font-['font4'] text-[4vw] font-black ">
+        <div className="flex flex-col h-[100vh] lg:h-[100vh] overflow-hidden sticky left-0 top-0 pt-[5vh] lg:pt-[10vh]">
+          <div className="pl-[5vw] lg:pl-[12vw] mb-[3vw] lg:mb-[5vw]">
+            <h1 className="uppercase font-['font4'] text-[8vw] sm:text-[6vw] lg:text-[4vw] font-black">
               choose your flow
             </h1>
           </div>
           <div
             ref={scrollRef}
-            className="slide flex flex-shrink-0  w-fit px-[10vw]  "
+            className="slide flex flex-shrink-0 w-fit px-[5vw] lg:px-[10vw] overflow-x-auto lg:overflow-visible"
           >
             {teaProducts.map((product) => (
               <div
                 key={product.id}
-                className="flex flex-shrink-0 flex-col items-center justify-center w-[32vw] h-[32vw] mx-[2vw] rounded-lg shadow-lg"
+                className="flex flex-shrink-0 flex-col items-center justify-center
+                          w-[80vw] h-[80vw] sm:w-[45vw] sm:h-[45vw] lg:w-[32vw] lg:h-[32vw]
+                          mx-[2vw] rounded-lg shadow-lg"
               >
                 <TeaCard
                  product={product}
