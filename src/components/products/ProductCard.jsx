@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <motion.div
-      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer group"
+      className="bg-white/10 backdrop-blur-md rounded-lg shadow-md border border-white/20 overflow-hidden cursor-pointer group"
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
       onMouseEnter={() => setIsHovered(true)}
@@ -41,13 +41,13 @@ const ProductCard = ({ product }) => {
           </span>
         </div>
         <motion.div
-          className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center"
+          className="absolute inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
           <motion.button
-            className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+            className="bg-white/20 backdrop-blur-md text-white border border-white/30 px-6 py-2 rounded-full font-semibold hover:bg-white/30 transition-colors"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
             transition={{ duration: 0.3 }}

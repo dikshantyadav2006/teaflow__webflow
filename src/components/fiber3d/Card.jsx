@@ -3,7 +3,7 @@ import ThreeImg from "./ThreeImg";
 const Card = (product) => {
   const { name, email, gender, img } = product.product;
   return (
-    <div className=" h-full w-full flex flex-col items-center justify-between p-4 bg-white/10 backdrop-blur-sm shadow-lg rounded-lg">
+    <div className=" h-full w-full flex flex-col items-center justify-between p-4 bg-white/10 backdrop-blur-md shadow-lg rounded-lg border border-white/20">
       <div className="h-[25vw] w-[25vw] flex-shrink-0 rounded-lg ">
         <ThreeImg img={img} />
       </div>

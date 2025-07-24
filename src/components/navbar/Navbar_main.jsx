@@ -31,7 +31,7 @@ const Navbar_main = () => {
      </div>
      </div>
      {/* Pass navMainRefs to NavMain component */}
-     <div  ref={(el) => (navCardRef.current = el )} className={`z-[999] left-0 top-[10vh] absolute w-full bg-[#FFFFFF] h-[90vh] transition-all duration-300  transform ${showNav ? "translate-y-[0%]" : "-translate-y-[200%] pointer-events-none"} border-b-2 border-black `}  >
+     <div  ref={(el) => (navCardRef.current = el )} className={`z-[999] left-0 top-[10vh] absolute w-full bg-white/10 backdrop-blur-md h-[90vh] transition-all duration-300  transform ${showNav ? "translate-y-[0%]" : "-translate-y-[200%] pointer-events-none"} border-b-2 border-white/20 `}  >
       <NavbarCard   showNav={showNav} navCardLinksRefs={navCardLinksRefs} navCardToggleButton={navCardToggleButton}/>
       </div>
    </div>

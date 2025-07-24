@@ -38,7 +38,7 @@ const BlogList = () => {
           
       <div key={index} className="w-[90vw]  flex flex-col justify-between items-center  mx-auto mb-5  ">
         <motion.div
-          className="blog relative w-full min-h-[27.5vw] pt-[5vw] flex justify-center  items-center overflow-hidden  "
+          className="blog relative w-full min-h-[27.5vw] pt-[5vw] flex justify-center items-center overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg"
           whileHover="blogHover"
           initial="upperLine"
           animate="upperLine"

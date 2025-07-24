@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react'
+import React, { createContext, useContext, useReducer, useEffect, useState } from 'react'
 
 const CartContext = createContext()
 
@@ -54,30 +54,46 @@ const cartReducer = (state, action) => {
   }
 }
 
-const initialState = {
-  items: []
+// Initialize state with localStorage data if available
+const getInitialState = () => {
+  if (typeof window !== 'undefined') {
+    try {
+      const savedCart = localStorage.getItem('teaflow-cart')
+      if (savedCart && savedCart !== 'undefined' && savedCart !== 'null') {
+        const parsedCart = JSON.parse(savedCart)
+        if (Array.isArray(parsedCart)) {
+          return { items: parsedCart }
+        }
+      }
+    } catch (error) {
+      console.error('Error reading initial cart from localStorage:', error)
+    }
+  }
+  return { items: [] }
 }
+
+const initialState = getInitialState()
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState)
+  const [isInitialized, setIsInitialized] = useState(false)
 
-  //.............. Load cart from localStorage on mount
+  //.............. Mark as initialized after first render
   useEffect(() => {
-    const savedCart = localStorage.getItem('teaflow-cart')
-    if (savedCart) {
-      try {
-        const parsedCart = JSON.parse(savedCart)
-        dispatch({ type: 'LOAD_CART', payload: parsedCart })
-      } catch (error) {
-        console.error('Error loading cart from localStorage:', error)
-      }
-    }
+    setIsInitialized(true)
   }, [])
 
-  //................. Save cart to localStorage whenever it changes
+  //................. Save cart to localStorage whenever it changes (but not on initial load)
   useEffect(() => {
-    localStorage.setItem('teaflow-cart', JSON.stringify(state.items))
-  }, [state.items])
+    if (isInitialized && typeof window !== 'undefined') {
+      console.log('Saving cart to localStorage:', state.items)
+      try {
+        localStorage.setItem('teaflow-cart', JSON.stringify(state.items))
+      } catch (error) {
+        console.error('Error saving cart to localStorage:', error)
+      }
+    }
+  }, [state.items, isInitialized])
 
   const addToCart = (product) => {
     dispatch({ type: 'ADD_TO_CART', payload: product })

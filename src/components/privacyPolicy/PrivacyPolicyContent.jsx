@@ -3,7 +3,7 @@ import React from 'react'
 const PrivacyPolicyContent = () => {
   return (
     <div className="w-full min-h-screen px-4 sm:px-8 lg:px-16 py-16">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-md rounded-lg border border-white/20 p-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="uppercase font-['font4'] text-[8vw] sm:text-[6vw] lg:text-[4vw] font-black text-gray-900 mb-4">
@@ -206,7 +206,7 @@ const PrivacyPolicyContent = () => {
               <p className="text-gray-700 leading-relaxed mb-4">
                 If you have any questions about this Privacy Policy or our privacy practices, please contact us:
               </p>
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
                 <p className="text-gray-700 mb-2"><strong>Email:</strong> privacy@teaflow.com</p>
                 <p className="text-gray-700 mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
                 <p className="text-gray-700 mb-2"><strong>Address:</strong> 123 Tea Street, Brew City, BC 12345</p>

@@ -31,9 +31,12 @@ const CartDropdown = ({ onClose }) => {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -10, scale: 0.95 }}
         transition={{ duration: 0.2 }}
-        className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-red rounded-lg shadow-xl border z-50 max-h-[80vh] sm:max-h-96 overflow-hidden"
+        className="absolute right-0 sm:right-0 top-full mt-2 w-80 sm:w-96
+                   bg-white/10 backdrop-blur-md rounded-lg shadow-xl border border-white/20 z-50
+                    overflow-hidden
+                    -left-[50vw] sm:translate-x-0 sm:left-auto"
       >
-        <div className="p-3 sm:p-4 border-b">
+        <div className="p-3 sm:p-4 border-b border-white/20 bg-white/5">
           <div className="flex justify-between items-center">
             <h3 className="text-base sm:text-lg font-semibold">Shopping Cart</h3>
             <button

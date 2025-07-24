@@ -141,7 +141,7 @@ const FooterMain = () => {
           ))}
         </div>
       </div>
-      <div className="footer__card h-[10vw] w-full flex justify-between items-center px-[10vw] ">
+      <div className="footer__card h-[10vw] w-full flex justify-between items-center px-[10vw] bg-white/5 backdrop-blur-sm border-t border-white/10">
         <div className="logo">
           <img
             className="w-[118px]"

@@ -97,7 +97,7 @@ const ProductDetails = () => {
   if (!product) {
     return (
       <div className="w-full min-h-screen flex items-center justify-center">
-        <div className="text-center">
+        <div className="text-center bg-white/10 backdrop-blur-md rounded-lg border border-white/20 p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h2>
           <button
             onClick={() => navigate('/products')}

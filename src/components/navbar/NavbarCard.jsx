@@ -78,7 +78,7 @@ const NavbarCard = ({ showNav, navCardToggleButton, navCardLinksRefs }) => {
           </NavLink>
         ))}
       </div>
-      <div className="flex justify-end gap-2 sm:mt-[7vh]  pr-[10vw] bg-[#F7F7F7] my-auto">
+      <div className="flex justify-end gap-2 sm:mt-[7vh]  pr-[10vw] bg-white/5 backdrop-blur-sm my-auto">
         <div className=" w-full h-fit flex mb-[5vw] lg:mb-[20vh]   justify-end ">
           <div className="flex   sm:flex-row">
             {Object.entries(navbarCardlinks).map(([key, headline]) => (

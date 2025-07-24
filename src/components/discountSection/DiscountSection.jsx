@@ -3,7 +3,7 @@ import React from "react";
 const DiscountSection = () => {
   return (
     <div className="w-full min-h-[60vh] sm:h-screen  flex flex-col justify-center items-center px-3  ">
-      <div className="div flex flex-col justify-center items-center gap-10 sm:flex-row  bg-[#F7F7F7] sm:min-w-[90%] sm:min-h-[70%] rounded-[10vw] sm:justify-between sm:px-[10vw] px-3">
+      <div className="div flex flex-col justify-center items-center gap-10 sm:flex-row bg-white/10 backdrop-blur-md border border-white/20 sm:min-w-[90%] sm:min-h-[70%] rounded-[10vw] sm:justify-between sm:px-[10vw] px-3">
         <div className="disc w-full  pt-10 sm:w-fit sm:h-[100%] px-2">
           <h1 className='  font-["font4"] font-[100] text-[10vw] sm:text-[4vw]  uppercase  leading-[12vw] sm:w-full w-[70%] ml-[1vw] text-start sm:justify-between '>
             get 20% off
