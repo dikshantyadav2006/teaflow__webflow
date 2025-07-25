@@ -5,6 +5,7 @@ import AppRoutes from './utils/AppRoutes'
 import FooterMain from './components/footer/FooterMain';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
+import NotificationSystem from './components/notification/NotificationSystem';
 const App = () => {
 
 
@@ -18,7 +19,10 @@ const App = () => {
           {/* Glass Background */}
           <div className="fixed inset-0 bg-gradient-to-br from-blue-50/30 via-white/20 to-purple-50/30 backdrop-blur-3xl -z-10"></div>
           <Navbar/>
-          <AppRoutes/>
+          <NotificationSystem/>
+          <div className="pt-[10vh]">
+            <AppRoutes/>
+          </div>
           <FooterMain/>
         </main>
       </CartProvider>

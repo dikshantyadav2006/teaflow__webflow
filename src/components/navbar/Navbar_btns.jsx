@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 const btns = [
   { name: "shop", path: "/products" },
+  { name: "offers", path: "/offers" },
   { name: "about us", path: "/about" },
   { name: "journal", path: "/journal" },
   { name: "contacts", path: "/contacts" },

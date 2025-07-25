@@ -17,6 +17,7 @@ import Signup from '../components/auth/Signup'
 import CheckoutMain from '../components/checkout/CheckoutMain'
 import CheckoutSuccess from '../components/checkout/CheckoutSuccess'
 import ProtectedRoute from '../components/auth/ProtectedRoute'
+import SpecialOffers from '../components/offers/SpecialOffers'
 const AppRoutes = () => {
   return (
     <>
@@ -25,6 +26,7 @@ const AppRoutes = () => {
         <Route path="/" element={<HomePage/>} />
         <Route path="/products" element={<ProductsMain/>} />
         <Route path="/products/:id" element={<ProductDetails/>} />
+        <Route path="/offers" element={<SpecialOffers/>} />
         <Route path="/cart" element={<CartPage/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />

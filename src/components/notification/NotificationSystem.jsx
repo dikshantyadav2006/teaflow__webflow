@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { XMarkIcon, GiftIcon, SparklesIcon, BellIcon } from '@heroicons/react/24/outline'
+import { useNavigate } from 'react-router-dom'
 
 const NotificationSystem = () => {
+  const navigate = useNavigate()
   const [isScrolling, setIsScrolling] = useState(false)
   const [showNotification, setShowNotification] = useState(false)
   const [currentNotification, setCurrentNotification] = useState(0)
@@ -15,7 +17,9 @@ const NotificationSystem = () => {
       title: "Special Offer!",
       message: "Get 20% off on your first order with code TEATIME20",
       type: "offer",
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
+      route: "/offers",
+      actionText: "Claim Offer"
     },
     {
       id: 2,
@@ -23,7 +27,9 @@ const NotificationSystem = () => {
       title: "New Arrivals!",
       message: "Discover our premium Dragon Well Green Tea collection",
       type: "product",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      route: "/products",
+      actionText: "View Products"
     },
     {
       id: 3,
@@ -31,7 +37,9 @@ const NotificationSystem = () => {
       title: "Free Shipping!",
       message: "Free shipping on orders over $50. Limited time offer!",
       type: "shipping",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      route: "/products",
+      actionText: "Shop Now"
     },
     {
       id: 4,
@@ -39,7 +47,9 @@ const NotificationSystem = () => {
       title: "Tea Masterclass",
       message: "Join our free online tea brewing masterclass this weekend",
       type: "event",
-      color: "from-orange-500 to-red-500"
+      color: "from-orange-500 to-red-500",
+      route: "/journal",
+      actionText: "Learn More"
     }
   ]
 
@@ -134,11 +144,13 @@ const NotificationSystem = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={() => {
+                    navigate(notification.route)
+                    handleCloseNotification()
+                  }}
                   className={`flex-1 bg-gradient-to-r ${notification.color} text-white text-xs font-semibold py-2 px-3 rounded-lg hover:shadow-lg transition-shadow`}
                 >
-                  {notification.type === 'offer' ? 'Claim Offer' : 
-                   notification.type === 'product' ? 'Shop Now' :
-                   notification.type === 'shipping' ? 'Shop Now' : 'Learn More'}
+                  {notification.actionText}
                 </motion.button>
                 
                 <motion.button

@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 
 export const useScrollDetection = (delay = 1000) => {
   const [isScrolling, setIsScrolling] = useState(false)
-  const [showOnScrollStop, setShowOnScrollStop] = useState(false)
+  const [showOnScrollStop, setShowOnScrollStop] = useState(true) // Start with true
   const [scrollDirection, setScrollDirection] = useState('up')
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
     let scrollTimer = null
+    let lastScrollY = window.scrollY
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY
@@ -15,10 +16,12 @@ export const useScrollDetection = (delay = 1000) => {
       // Determine scroll direction
       if (currentScrollY > lastScrollY) {
         setScrollDirection('down')
-      } else {
+      } else if (currentScrollY < lastScrollY) {
         setScrollDirection('up')
       }
-      setLastScrollY(currentScrollY)
+
+      lastScrollY = currentScrollY
+      setScrollY(currentScrollY)
 
       // Set scrolling state
       setIsScrolling(true)
@@ -36,6 +39,9 @@ export const useScrollDetection = (delay = 1000) => {
       }, delay)
     }
 
+    // Initial call to set scroll position
+    setScrollY(window.scrollY)
+
     window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
@@ -44,13 +50,13 @@ export const useScrollDetection = (delay = 1000) => {
         clearTimeout(scrollTimer)
       }
     }
-  }, [delay, lastScrollY])
+  }, [delay])
 
   return {
     isScrolling,
     showOnScrollStop,
     scrollDirection,
-    scrollY: lastScrollY
+    scrollY
   }
 }
 
