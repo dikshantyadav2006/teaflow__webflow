@@ -7,7 +7,7 @@ const NavbarCard = ({ showNav, navCardToggleButton, navCardLinksRefs }) => {
   const btns = [
     { id: 1, name: "Home", path: "/" },
     { id: 2, name: "products", path: "/products" },
-    { id: 3, name: "top sales", path: "/topsales" },
+    { id: 3, name: "top shales", path: "/topshales" },
     { id: 4, name: "journal", path: "/journal" },
     { id: 5, name: "contacts", path: "/contacts" },
   ];

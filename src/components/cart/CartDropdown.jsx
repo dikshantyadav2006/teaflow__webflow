@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useCart } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
+import { scrollToTopInstant } from '../../utils/scrollToTop'
 
 const CartDropdown = ({ onClose }) => {
   const { items, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart()
@@ -149,14 +150,24 @@ const CartDropdown = ({ onClose }) => {
             <div className="space-y-2">
               <Link
                 to="/cart"
-                onClick={onClose}
+                onClick={() => {
+                  onClose()
+                  scrollToTopInstant()
+                }}
                 className="w-full bg-gray-200 text-gray-800 py-2 px-4 rounded-lg text-center block hover:bg-gray-300 transition-colors"
               >
                 View Cart
               </Link>
-              <button className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors">
+              <Link
+                to="/checkout"
+                onClick={() => {
+                  onClose()
+                  scrollToTopInstant()
+                }}
+                className="w-full bg-gray-200 text-gray-800 py-2 px-4 rounded-lg text-center block hover:bg-gray-300 transition-colors"
+              >
                 Checkout
-              </button>
+              </Link>
             </div>
           </div>
         )}

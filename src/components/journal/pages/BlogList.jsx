@@ -1,33 +1,65 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import blogService from "../../../services/blogService";
+
 const BlogList = () => {
-  const blogList = [
-    {
-      date: "Jun 8, 2023",
-      title: "What is matcha?",
-      image:
-        "https://cdn.prod.website-files.com/64899c647bc07ddd2ccf0cf5/64899c647bc07ddd2ccf1250_000.jpeg",
-    },
-    {
-      date: "May 4, 2023",
-      title: "How to make tea on fire, lazy cooking",
-      image:
-        "https://cdn.prod.website-files.com/64899c647bc07ddd2ccf0cf5/6740ab6f3506ad1939defb32_teapot-is-fireproof-glass-1-new.jpeg",
-    },
-    {
-      date: "Mar 6, 2023",
-      title:
-        "Chaban (Tea Tray), hucheng, chachuan, and other variants of tea trays",
-      image:
-        "https://cdn.prod.website-files.com/64899c647bc07ddd2ccf0cf5/6740e8c3c7d3940b089ee0be_Chaban%20%231-new-1.jpeg",
-    },
-    {
-      date: "Jan 16, 2023",
-      title: "How to brew Shu (ripe) Pu-erh tea correctly",
-      image:
-        "https://cdn.prod.website-files.com/64899c647bc07ddd2ccf0cf5/673cb7471749f53e6b571bf6_white-min.jpg",
-    },
-  ];
+  const [blogList, setBlogList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loadBlogs = async () => {
+      try {
+        setLoading(true);
+        const blogs = await blogService.getAllBlogs();
+        setBlogList(blogs);
+      } catch (err) {
+        setError('Failed to load blogs');
+        console.error('Error loading blogs:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadBlogs();
+  }, []);
+
+  const handleBlogClick = (blog) => {
+    navigate(`/journal/${blog.slug}`);
+  };
+
+  if (loading) {
+    return (
+      <div className="w-full py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading blogs...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-full py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center">
+            <p className="text-red-600 mb-4">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="collection w-full  ">
@@ -38,10 +70,11 @@ const BlogList = () => {
           
       <div key={index} className="w-[90vw]  flex flex-col justify-between items-center  mx-auto mb-5  ">
         <motion.div
-          className="blog relative w-full min-h-[27.5vw] pt-[5vw] flex justify-center items-center overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg"
+          className="blog relative w-full min-h-[27.5vw] pt-[5vw] flex justify-center items-center overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg cursor-pointer"
           whileHover="blogHover"
           initial="upperLine"
           animate="upperLine"
+          onClick={() => handleBlogClick(blog)}
         >
           <motion.div
             className="absolute top-0 left-1/2 h-[1px] bg-black w-full "
@@ -75,6 +108,10 @@ const BlogList = () => {
                   whileHover="hover"
                   initial="rest"
                   animate="rest"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleBlogClick(blog);
+                  }}
                 >
                   Read article
                   <motion.div

@@ -3,6 +3,7 @@ import Nav from './Nav'
 import NavbarCard from './NavbarCard.jsx';
 import useNavbarAnimations from "./NavbarAnimations";
 import CartIcon from '../cart/CartIcon';
+import UserMenu from './UserMenu';
 import { NavLink } from 'react-router-dom';
 
 const Navbar_main = () => {
@@ -24,6 +25,7 @@ const Navbar_main = () => {
         <Navbar_btns/>
      </div>
       <div className="h-full min-w-10 flex items-center gap-4">
+        <UserMenu />
         <CartIcon />
         <div className="">
             <Nav showNav={showNav} spanRefs={spanRefs}  navCardToggleButton={navCardToggleButton}/>

@@ -149,7 +149,7 @@ const AnimatedHero = () => {
         {/* Mobile Image Section */}
         <div className='w-full flex justify-center items-center mb-8'>
           <div
-            className='w-[80vw] h-[80vw] rounded-[7vh] overflow-hidden relative'
+            className='w-[80vw] h-[80vw] overflow-hidden relative'
             onMouseEnter={() => setIsCanvasHovered(true)}
             onMouseLeave={() => setIsCanvasHovered(false)}
           >
@@ -308,7 +308,7 @@ const AnimatedHero = () => {
           {/* Right Image Section */}
           <div className='w-[50vw] flex justify-center items-center'>
             <div
-              className='w-[40vw] h-[40vw] rounded-[7vh] overflow-hidden relative'
+              className='w-[40vw] h-[40vw]  overflow-hidden relative'
               onMouseEnter={() => setIsCanvasHovered(true)}
               onMouseLeave={() => setIsCanvasHovered(false)}
             >

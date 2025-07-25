@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "slug": "what-is-matcha",
+    "date": "Jun 8, 2023",
+    "title": "What is matcha?",
+    "excerpt": "Discover the ancient art of matcha and its incredible health benefits in this comprehensive guide.",
+    "image": "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=800&h=600&fit=crop",
+    "author": "Tea Master Chen",
+    "readTime": "5 min read",
+    "category": "Education",
+    "tags": ["matcha", "green tea", "health", "tradition"],
+    "content": {
+      "introduction": "Matcha is a finely ground powder made from specially grown and processed green tea leaves. Unlike regular green tea, matcha involves consuming the entire leaf, providing a concentrated source of nutrients and antioxidants.",
+      "sections": [
+        {
+          "heading": "The Origins of Matcha",
+          "content": "Matcha has its roots in ancient China but was perfected in Japan during the 12th century. Buddhist monks brought the tea ceremony to Japan, where it evolved into the elaborate ritual we know today. The word 'matcha' literally means 'powdered tea' in Japanese."
+        },
+        {
+          "heading": "How Matcha is Made",
+          "content": "The process begins 3-4 weeks before harvest when tea plants are covered to block sunlight. This increases chlorophyll levels and amino acid content, giving matcha its vibrant green color and unique flavor profile. After harvesting, leaves are steamed, dried, and ground into a fine powder using traditional stone mills."
+        },
+        {
+          "heading": "Health Benefits",
+          "content": "Matcha is packed with antioxidants called catechins, particularly EGCG (epigallocatechin gallate). It provides sustained energy without jitters, supports metabolism, enhances focus through L-theanine, and may help protect against heart disease and certain cancers."
+        },
+        {
+          "heading": "How to Prepare Matcha",
+          "content": "Traditional preparation involves sifting 1-2 teaspoons of matcha powder, adding 2-3 ounces of hot water (70-80°C), and whisking in a 'W' motion until frothy. The key is achieving the right consistency and temperature for optimal flavor."
+        }
+      ],
+      "conclusion": "Matcha represents more than just a beverage—it's a meditation, a ritual, and a connection to centuries of tradition. Whether you're seeking health benefits or simply enjoying the unique flavor, matcha offers a truly special tea experience."
+    }
+  },
+  {
+    "id": 2,
+    "slug": "how-to-make-tea-on-fire",
+    "date": "May 4, 2023",
+    "title": "How to make tea on fire, lazy cooking",
+    "excerpt": "Learn the art of brewing tea over an open flame for a unique outdoor experience.",
+    "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&h=600&fit=crop",
+    "author": "Outdoor Tea Enthusiast",
+    "readTime": "7 min read",
+    "category": "Brewing",
+    "tags": ["outdoor", "fire", "brewing", "adventure"],
+    "content": {
+      "introduction": "There's something magical about brewing tea over an open fire. The combination of crackling flames, fresh air, and the ritual of tea preparation creates an unforgettable experience that connects us with our ancestors.",
+      "sections": [
+        {
+          "heading": "Equipment You'll Need",
+          "content": "For fire-brewing tea, you'll need a cast iron kettle or fireproof teapot, a sturdy grate or tripod, quality loose-leaf tea, fresh water, and basic fire safety equipment. Choose equipment that can withstand direct heat and won't crack under temperature changes."
+        },
+        {
+          "heading": "Building the Perfect Fire",
+          "content": "Start with dry kindling and gradually build up to larger logs. You want a steady, moderate flame rather than a roaring fire. Create a bed of hot coals for consistent heat. Position your grate about 6-8 inches above the coals for optimal temperature control."
+        },
+        {
+          "heading": "Water Temperature Control",
+          "content": "Unlike electric kettles, fire brewing requires attention to water temperature. Listen for the 'first boil' - small bubbles forming at the bottom. For green teas, remove just before full boil. For black teas and pu-erh, a rolling boil is perfect."
+        },
+        {
+          "heading": "The Lazy Cooking Method",
+          "content": "The 'lazy' approach involves setting up your tea station once and letting the fire do the work. Use a large kettle to heat extra water, prepare multiple infusions, and enjoy the slow pace. This method encourages mindfulness and patience."
+        }
+      ],
+      "conclusion": "Fire-brewed tea isn't just about the beverage—it's about slowing down, connecting with nature, and appreciating the simple pleasures in life. The slightly smoky flavor and the meditative process make every cup special."
+    }
+  },
+  {
+    "id": 3,
+    "slug": "chaban-tea-tray-guide",
+    "date": "Mar 6, 2023",
+    "title": "Chaban (Tea Tray), hucheng, chachuan, and other variants of tea trays",
+    "excerpt": "Explore the world of traditional Chinese tea trays and their role in gongfu tea ceremony.",
+    "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
+    "author": "Traditional Tea Expert",
+    "readTime": "8 min read",
+    "category": "Equipment",
+    "tags": ["chaban", "tea tray", "gongfu", "ceremony"],
+    "content": {
+      "introduction": "The tea tray, or 'chaban' in Chinese, is an essential component of traditional gongfu tea ceremony. These beautiful and functional pieces serve both practical and aesthetic purposes in the art of tea preparation.",
+      "sections": [
+        {
+          "heading": "What is a Chaban?",
+          "content": "A chaban is a specialized tea tray designed to catch overflow water during tea preparation. Traditional chabans are made from bamboo, wood, or stone and feature drainage systems to handle the water used in rinsing teaware and warming cups."
+        },
+        {
+          "heading": "Types of Tea Trays",
+          "content": "Hucheng trays are boat-shaped and often made from bamboo. Chachuan are larger, table-style trays perfect for group ceremonies. Stone trays offer durability and heat retention, while wooden trays provide natural beauty and are easier to maintain."
+        },
+        {
+          "heading": "Choosing the Right Tray",
+          "content": "Consider your space, the number of people you'll serve, and your aesthetic preferences. Beginners might start with a simple bamboo tray, while serious practitioners often invest in handcrafted wooden or stone pieces that improve with age."
+        },
+        {
+          "heading": "Care and Maintenance",
+          "content": "Proper care extends your tray's life significantly. Rinse after each use, dry thoroughly to prevent mold, and occasionally oil wooden trays. Stone trays should be seasoned before first use and cleaned with hot water only."
+        }
+      ],
+      "conclusion": "A quality tea tray is an investment in your tea journey. It not only serves practical purposes but also enhances the ritual and mindfulness of tea preparation, making each session more enjoyable and authentic."
+    }
+  },
+  {
+    "id": 4,
+    "slug": "brewing-shu-puerh-correctly",
+    "date": "Jan 16, 2023",
+    "title": "How to brew Shu (ripe) Pu-erh tea correctly",
+    "excerpt": "Master the art of brewing ripe pu-erh tea with this detailed guide to unlock its rich, earthy flavors.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+    "author": "Pu-erh Specialist",
+    "readTime": "6 min read",
+    "category": "Brewing",
+    "tags": ["pu-erh", "shu", "brewing", "technique"],
+    "content": {
+      "introduction": "Shu (ripe) pu-erh is a post-fermented tea known for its deep, earthy flavor and smooth character. Proper brewing technique is essential to unlock its full potential and avoid common pitfalls that can make it taste muddy or overly strong.",
+      "sections": [
+        {
+          "heading": "Understanding Shu Pu-erh",
+          "content": "Shu pu-erh undergoes a wet fermentation process called 'wo dui' that accelerates aging. This creates its characteristic dark color, earthy aroma, and mellow taste. Quality shu pu-erh should be clean-tasting without musty or fishy notes."
+        },
+        {
+          "heading": "Preparation Steps",
+          "content": "Start by rinsing your teaware with hot water. Break off 7-8 grams of tea (about 1 tablespoon) from the cake. Rinse the tea twice with boiling water, discarding the liquid. This removes any dust and awakens the leaves."
+        },
+        {
+          "heading": "Brewing Parameters",
+          "content": "Use boiling water (100°C) for shu pu-erh. First infusion: 20-30 seconds. Subsequent infusions: 10-15 seconds, gradually increasing. Good shu pu-erh can yield 8-12 flavorful infusions. Adjust timing based on your taste preference."
+        },
+        {
+          "heading": "Common Mistakes to Avoid",
+          "content": "Don't skip the rinse - it's crucial for clean flavor. Avoid over-steeping early infusions, which can make the tea bitter. Don't use too much leaf initially; you can always add more. Store opened pu-erh in breathable containers, not airtight bags."
+        }
+      ],
+      "conclusion": "Properly brewed shu pu-erh offers a meditative tea experience with its smooth, grounding character. With practice, you'll develop an intuition for timing and strength that brings out the best in this remarkable tea."
+    }
+  }
+]

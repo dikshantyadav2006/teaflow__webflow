@@ -4,6 +4,7 @@ import Navbar from './components/navbar/Navbar_main'
 import AppRoutes from './utils/AppRoutes'
 import FooterMain from './components/footer/FooterMain';
 import { CartProvider } from './context/CartContext';
+import { AuthProvider } from './context/AuthContext';
 const App = () => {
 
 
@@ -11,15 +12,17 @@ const App = () => {
   
 
   return (
-    <CartProvider>
-      <main className='webColor relative'>
-        {/* Glass Background */}
-        <div className="fixed inset-0 bg-gradient-to-br from-blue-50/30 via-white/20 to-purple-50/30 backdrop-blur-3xl -z-10"></div>
-        <Navbar/>
-        <AppRoutes/>
-        <FooterMain/>
-      </main>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <main className='webColor relative'>
+          {/* Glass Background */}
+          <div className="fixed inset-0 bg-gradient-to-br from-blue-50/30 via-white/20 to-purple-50/30 backdrop-blur-3xl -z-10"></div>
+          <Navbar/>
+          <AppRoutes/>
+          <FooterMain/>
+        </main>
+      </CartProvider>
+    </AuthProvider>
   )
 }
 
